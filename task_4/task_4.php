@@ -16,6 +16,7 @@ try{
     $stmt ->execute();
     $result = $stmt -> fetchAll();
     print_r($result);
+    
 }catch(PDOException $e){
     echo "Connection failed" . $e->getMessage();
 }
