@@ -15,7 +15,7 @@ $array = [
     ["Tuzla"]=> int(75000),
     ["Zenica"]=> int(72000)
 ];
-
+echo "ALLAH";
 echo 'Initial array: <br>';
 foreach($array as $element){
      echo $element . '<br>';
