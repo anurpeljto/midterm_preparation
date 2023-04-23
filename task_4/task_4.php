@@ -2,7 +2,8 @@
 
 require_once("rest/dao/StudentsDao.class.php");
 $students_dao = new StudentsDao();
-
+$results = $students_dao->get_all();
+print_r($results);
 
 /* $username = "root";
 $password = "root";
