@@ -9,7 +9,7 @@ $anur = [
 ];
 
 $projectdao->addObject($anur);
-$projectdao->getAll();
+print_r($projectdao->getAll());
 
 
 
