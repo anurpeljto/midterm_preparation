@@ -13,8 +13,7 @@ try{
     echo "Connected successfully";
 
     $stmt = $conn ->prepare("INSERT INTO Users (firstName, lastName) VALUES ('koo', 'rac'");
-    $stmt -> execute();
-    $result = $stmt -> fetchAll(PDO::FETCH_ASSOC);
+    $result = $stmt -> execute();
     print_r($result);
 }catch(PDOException $e){
     echo "Connection failed" . $e->getMessage();
