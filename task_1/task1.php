@@ -8,11 +8,11 @@ Recorded temperatures:
 */
 
 function avg($temperature){
-    $sum = 0;
-     $count = 0;
+    $sum = 0.0;
+    $count = 0.0;
     foreach ($temperature as $temp){
         $sum += $temp;
-        $count+=1;
+        $count+=1.0;
     }
     return sum / count;
 }
