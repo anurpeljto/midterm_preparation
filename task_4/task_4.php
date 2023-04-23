@@ -12,7 +12,7 @@ try{
     $conn ->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     echo "Connected successfully";
 
-    $stmt = $conn ->prepare("INSERT INTO Users (firstName), (lastName) VALUES ('koo', 'rac'");
+    $stmt = $conn ->prepare("INSERT INTO Users (firstName, lastName) VALUES ('koo', 'rac'");
     $stmt -> execute();
     $result = $stmt -> fetchAll(PDO::FETCH_ASSOC);
     print_r($result);
