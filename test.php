@@ -1,18 +1,31 @@
 <?php
 
-$projectdao = new ProjectDao();
+require 'UserDao.class.php';
 
-$anur = [
-    "firstName" => "Anur",
-    "lastName" => "Peljto",
-    "id" => 1
+$userDao = new UserDao();
+$users = $userDao->getUsers();
+var_dump($users);
+echo "<br>";
+
+$newUser = [
+    'firstName' => 'John',
+    'lastName' => 'Doe',
+    'age' => 25
 ];
 
-$projectdao->addObject($anur);
-print_r($projectdao->getAll());
+$savedUser = $userDao->addUser($newUser);
+$users = $userDao->getUsers();
+var_dump($users);
+echo "<br>";
 
+$savedUser['firstName'] = 'Jane';
+$userDao->updateUser($savedUser);
+$users = $userDao->getUsers();
+var_dump($users);
+echo "<br>";
 
-
-
+$userDao->deleteUser($savedUser['id']);
+$users = $userDao->getUsers();
+var_dump($users);
 
 ?>
