@@ -14,7 +14,7 @@ try{
 
     $first_name = $_REQUEST['firstName'];
     $last_name = $_REQUEST['lastName'];
-    $stmt = $conn -> prepare("INSERT INTO Users (firstName, lastName) VALUES ($first_name, $last_name)");
+    $stmt = $conn -> prepare("INSERT INTO Users (firstName, lastName) VALUES ('$first_name', '$last_name')");
     $stmt ->execute();
     print_r($result);
 
