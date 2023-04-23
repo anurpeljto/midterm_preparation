@@ -15,6 +15,8 @@ try{
 
     $stmt2 = $conn->prepare("SELECT * FROM Users");
     $stmt2->execute();
+    $result = $stmt2 -> fetchAll();
+    print_r($result);
 }catch(PDOException $e){
     echo "Connection failed" . $e->getMessage();
 }
