@@ -14,6 +14,7 @@ Flight::route('/', function(){
   
   $projectDao->addObject($anur);
   $projectDao->getAll();
+  echo "Hi";
 });
 
 $projectDao = new ProjectDao();
