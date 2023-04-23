@@ -6,19 +6,19 @@ require 'flight/Flight.php';
 require_once '/rest/dao/ProjectDao.class.php';
 
 Flight::route('/', function(){
-  echo 'hello world!';
+  $anur = [
+    "firstName" => "Anur",
+    "id" => "1",
+    "lastName" => "Peljto"
+  ];
+  
+  $projectDao->addObject($anur);
+  $projectDao->getAll();
 });
 
 $projectDao = new ProjectDao();
 
-$anur = [
-  "firstName" => "Anur",
-  "id" => "1",
-  "lastName" => "Peljto"
-];
 
-$projectDao->addObject($anur);
-$projectDao->getAll();
 
 Flight::start();
 
