@@ -14,7 +14,7 @@ function avg($temperature){
         $sum += $temp;
         $count+=1.0;
     }
-    return sum / count;
+    return $sum / $count;
 }
 
 // return highest:
