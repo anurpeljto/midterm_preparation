@@ -26,3 +26,4 @@ transformArray($array);
 foreach($array as $element){
     echo $element . '<br>';
 }
+?>
