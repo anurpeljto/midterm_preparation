@@ -1,17 +1,24 @@
 <?php
-header('Access-Control-Allow-Origin: *');
-header('Access-Control-Allow-Methods: PUT, GET, POST, DELETE, OPTIONS, PATCH');
-require 'vendor/autoload.php';
 
-Flight::register('db', 'PDO', array('mysql:host = localhost;dbname=lab3', 'root', 'root'));
 
-Flight::route('GET api/users', function (){
-    $users = Flight::db() -> query('SELECT * FROM Users', PDO::FETCH_ASSOC)-> fetchAll();
-    var_dump($users);
-    Flight::json($users);
-});
+$username = "root";
+$password = "root";
+$host = "localhost";
+$schema = "lab3";
 
-FLight::start();
+
+try{
+    $conn = new PDO ("mysql:host=$host;dbname=$schema", $username, $password);
+    $conn ->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    echo "Connected successfully";
+
+    $stmt = $conn ->prepare("SELECT * FROM students");
+    $stmt -> execute();
+    $result = $stmt -> fetchAll(PDO::FETCH_ASSOC);
+    print_r($result);
+}catch(PDOException $e){
+    echo "Connection failed" . $e->getMessage();
+}
 
 
 
