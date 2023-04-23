@@ -1,6 +1,6 @@
 <?php
 
-$projectdao = new ProejctDao();
+$projectdao = new ProjectDao();
 
 $anur = [
     "firstName" => "Anur",
