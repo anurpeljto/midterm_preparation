@@ -1,7 +1,10 @@
 <?php
 
+require_once("rest/dao/StudentsDao.class.php");
+$students_dao = new StudentsDao();
 
-$username = "root";
+
+/* $username = "root";
 $password = "root";
 $host = "localhost";
 $schema = "lab3";
@@ -22,7 +25,7 @@ try{
     echo "Connection failed" . $e->getMessage();
 }
 
-
+*/
 
 
 ?>
