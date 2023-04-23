@@ -12,7 +12,6 @@ try{
     $conn ->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     echo "Connected successfully";
 
-    print_r($_REQUEST);
     $first_name = $_REQUEST['firstName'];
     $last_name = $_REQUEST['lastName'];
     $stmt = $conn -> prepare("INSERT INTO Users (firstName, lastName) VALUES ($first_name, $last_name)");
