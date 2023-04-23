@@ -6,8 +6,7 @@ function transformArray($array){
     $array["Sarajevo"] = "capital";
     $array["Mostar"] = 88000;
     $array["Banja Luka"] = 78000;
-    unset($array["Zenica"]);
-};
+}
 
 $array = array(
     "Sarajevo" => 71000,
