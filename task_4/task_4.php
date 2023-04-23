@@ -15,6 +15,10 @@ try{
     $stmt = $conn ->prepare("INSERT INTO Users (firstName, lastName) VALUES ('koo', 'rac'");
     $result = $stmt -> execute();
     print_r($result);
+
+    $stmt2 = $conn->prepare("SELECT * FROM Users");
+    $res2 = $stmt2 -> execute();
+    print_r($res_2);
 }catch(PDOException $e){
     echo "Connection failed" . $e->getMessage();
 }
