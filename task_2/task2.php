@@ -17,14 +17,14 @@ $array = array(
 );
 
 echo 'Initial array: <br>';
-foreach($array as $element){
-     echo $element . '<br>';
+foreach($array as [$key => $value]){
+    echo $key . ' : ' . $value . '<br>';
     };
 
 echo 'Modified array: <br>';
 transformArray($array);
-foreach($array as $element){
-    echo $element . '<br>';
+foreach($array as [$key => $value]){
+    echo $key . ' : ' . $value . '<br>';
 }
 
 ?>
