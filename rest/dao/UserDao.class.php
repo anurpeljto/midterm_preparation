@@ -4,9 +4,9 @@ class UserDao {
 
     private $conn;
     private $host = 'localhost';
-    private $database = 'lab3_db';
+    private $database = 'lab3';
     private $username = 'root';
-    private $password = '';
+    private $password = 'root';
     
     public function __construct() {
         try {
@@ -18,7 +18,7 @@ class UserDao {
     }
 
     function getUsers() {
-        $stmt = $this->conn->prepare("SELECT * FROM users");
+        $stmt = $this->conn->prepare("SELECT * FROM Users");
         $stmt->execute();
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
@@ -26,11 +26,9 @@ class UserDao {
     function addUser($user) {
         $firstName = $user['firstName'];
         $lastName = $user['lastName'];
-        $age = $user['age'];
-        $stmt = $this->conn->prepare("INSERT INTO users (firstName, lastName, age) VALUES (:firstName, :lastName, :age)");
+        $stmt = $this->conn->prepare("INSERT INTO users (firstName, lastName) VALUES (:firstName, :lastName)");
         $stmt->bindParam(':firstName', $firstName);
         $stmt->bindParam(':lastName', $lastName);
-        $stmt->bindParam(':age', $age);
         $stmt->execute();
         $user['id'] = $this->conn->lastInsertId();
         return $user;
@@ -40,12 +38,10 @@ class UserDao {
         $id = $user['id'];
         $firstName = $user['firstName'];
         $lastName = $user['lastName'];
-        $age = $user['age'];
-        $stmt = $this->conn->prepare("UPDATE users SET firstName = :firstName, lastName = :lastName, age = :age WHERE id = :id");
+        $stmt = $this->conn->prepare("UPDATE users SET firstName = :firstName, lastName = :lastName WHERE id = :id");
         $stmt->bindParam(':id', $id);
         $stmt->bindParam(':firstName', $firstName);
         $stmt->bindParam(':lastName', $lastName);
-        $stmt->bindParam(':age', $age);
         $stmt->execute();
         echo "User updated successfully <br>";
     }
