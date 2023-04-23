@@ -12,7 +12,7 @@ try{
     $conn ->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     echo "Connected successfully";
 
-    $stmt = $conn ->prepare("SELECT * FROM students");
+    $stmt = $conn ->prepare("SELECT * FROM Users");
     $stmt -> execute();
     $result = $stmt -> fetchAll(PDO::FETCH_ASSOC);
     print_r($result);
