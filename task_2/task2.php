@@ -9,14 +9,14 @@ function transformArray($array){
     unset($array["Zenica"]);
 };
 
-$array = [
-    ["Sarajevo"]=> int(71000),
-    ["Mostar"]=> int(88000),
-    ["Tuzla"]=> int(75000),
-    ["Zenica"]=> int(72000)
-];
+$array = array(
+    "Sarajevo" => 71000,
+    "Mostar" => 88000,
+    "Tuzla" => 75000,
+    "Zenica" => 72000
+);
 
-echo 'Initial array:';
+echo 'Initial array: <br>';
 foreach($array as $element){
      echo $element . '<br>';
     };
