@@ -13,7 +13,7 @@ class StudentsDao{
 
         try{
             $this->$conn = new PDO("mysql:host=$hostname;dbname=$schema", $username, $password);
-            $this->$conn->setAttribute(PDO::ATTR_ERRMODE, PDO:ERRMODE_EXCEPTION);
+            $this->$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
             echo "Successfully connected";
         }catch(PDOException $e){
             echo "Connection failed " . $e->getMessage();
