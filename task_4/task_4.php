@@ -17,6 +17,11 @@ try{
     $stmt2->execute();
     $result = $stmt2 -> fetchAll();
     print_r($result);
+
+    $stmt = $conn -> prepare("INSERT INTO Users (firstName, lastName) VALUES ('khoo', 'rcina')");
+    $stmt ->execute();
+    $result = $stmt -> fetchAll();
+    print_r($result);
 }catch(PDOException $e){
     echo "Connection failed" . $e->getMessage();
 }
