@@ -3,8 +3,15 @@
 require 'vendor/autoload.php';
 
 // mysql:host=HOSTNAME;dbname=DBNAME','USERNAME','PASSWORD'
-Flight::register('db', 'PDO', array('mysql:host=localhost;dbname=lab3','root','root'));
+$hostname = "localhost";
+$dbname = "lab3";
+Flight::register('db', 'PDO', array("mysql:host=$hostname;dbname=$dbname",'root','root'));
 
+Flight::route('GET /api/users', function(){
+    $users = Flight::db()->query('SELECT * FROM Users', PDO::FETCH_ASSOC)->fetchAll();
+    var_dump($users);
+    Flight::json($users);
+});
 
 Flight::start();
 
